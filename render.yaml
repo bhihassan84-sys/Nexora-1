@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: nexora-signal-lab
+    runtime: python
+    buildCommand: pip install -e . && pip install -r requirements.txt
+    startCommand: gunicorn nexora_server:app --bind 0.0.0.0:$PORT
+    healthCheckPath: /health
+    envVars:
+      - key: TRADOWIX_EMAIL
+        sync: false
+      - key: TRADOWIX_PASSWORD
+        sync: false
+      - key: TRADOWIX_DEMO
+        value: "true"
+      - key: NEXORA_SYMBOL
+        value: USDJPY-OTC
+      - key: NEXORA_TIMEFRAME_SECONDS
+        value: "60"
+      - key: NEXORA_HISTORY_SECONDS
+        value: "86400"
+      - key: NEXORA_MIN_CANDLES
+        value: "60"

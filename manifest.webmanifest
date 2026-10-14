@@ -1,0 +1,12 @@
+{
+  "name": "NEXORA Signal Lab",
+  "short_name": "NEXORA",
+  "description": "Mobile-friendly market signal analysis dashboard",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#07090e",
+  "theme_color": "#07090e",
+  "orientation": "portrait",
+  "icons": []
+}

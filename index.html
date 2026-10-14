@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07090e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="manifest" href="/static/manifest.webmanifest">
+<title>NEXORA | Signal Lab</title><link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="fog fog-a"></div><div class="fog fog-b"></div>
+<header class="top"><div class="brand"><span class="brand-mark">N</span><div><strong>NEXORA</strong><small>SIGNAL LAB</small></div></div><span class="status"><i></i> LOCAL DASHBOARD</span></header>
+<main>
+<section class="intro"><p class="eyebrow">MARKET INTELLIGENCE / SIGNAL-ONLY MODE</p><h1>Read the market.<br><em>Wait for clarity.</em></h1><p class="muted">OTC candle analysis with transparent indicators. No automatic trade execution.</p></section>
+<section class="controls panel"><label for="symbol">MARKET SYMBOL</label><div class="control-row"><input id="symbol" list="symbols" value="USDJPY-OTC" autocomplete="off"><datalist id="symbols"><option>USDJPY-OTC</option><option>EURUSD-OTC</option><option>GBPUSD-OTC</option><option>BTCUSD-OTC</option></datalist><button id="refresh">ANALYZE MARKET ↗</button></div><p class="hint">Choose a symbol or type one supported by your account.</p></section>
+<section class="signal-layout">
+<div class="orb-panel panel"><div class="orb-wrap"><div class="orb-ring ring-one"></div><div class="orb-ring ring-two"></div><div class="orb" id="orb"><span id="signal">NO<br>SIGNAL</span></div></div><p class="eyebrow">LATEST SETUP</p><h2 id="headline">Waiting for data</h2><p id="reason" class="muted">Click “Analyze Market” to fetch historical candles.</p><div class="confidence"><div><span>RULE STRENGTH</span><strong id="confidence">—</strong></div><div class="meter"><span id="meter"></span></div></div></div>
+<div class="metrics"><article class="panel metric"><span>MARKET</span><strong id="market">USDJPY-OTC</strong><small id="candle-count">Candles: —</small></article><article class="panel metric"><span>RSI (14)</span><strong id="rsi">—</strong><small>Momentum reading</small></article><article class="panel metric"><span>EMA 9 / 21 / 50</span><strong id="ema">—</strong><small>Trend alignment</small></article><article class="panel metric"><span>LAST UPDATED</span><strong id="updated">—</strong><small>Server timestamp</small></article></div>
+</section>
+<section class="panel backtest"><div><p class="eyebrow">HISTORICAL CHECK</p><h2>Quick directional evaluation</h2><p class="muted">Simple next-candle direction score. It is not a profit forecast and excludes payout and execution effects.</p></div><div class="backtest-stats"><div><span>Signals</span><strong id="bt-signals">—</strong></div><div><span>Wins</span><strong id="bt-wins">—</strong></div><div><span>Direction rate</span><strong id="bt-rate">—</strong></div></div></section>
+<div id="message" class="message" role="status" aria-live="polite">Ready. Configure your credentials in the local .env file to connect.</div>
+<p class="disclaimer">Research tool only. Rule strength is not a calibrated probability of winning. OTC prices and outcomes may differ from other data sources. Verify performance on unseen data before relying on signals.</p>
+</main>
+<nav class="bottom"><span class="active">◈ Signals</span><span>⌁ Markets</span><span>◷ History</span><span>▦ Analytics</span></nav>
+<script src="/static/app.js"></script>
+<script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost" || location.hostname === "127.0.0.1")) { window.addEventListener("load", () => navigator.serviceWorker.register("/static/service-worker.js").catch(() => {})); }</script>
+</body></html>
